@@ -6,12 +6,27 @@ is the THIRD wave-1 blueprint batch: management/professional work is
 cognitive, **no robotics gate** — eligible for actor implementation
 now.
 
-**Maturity: `:blueprint`** — blueprint only; **no actor implementation
-yet**, and none is claimed. The implemented actor will follow the
-fleet-standard pattern (advisor-LLM sealed behind the independent
-`:construction-management-governor` governor, human approval workflow, append-only audit ledger);
-decisions with external or financial effect are always
-:external-send / escalated, never auto-committed.
+**Maturity: `:implemented`** — ConstructionManagersAdvisor ⊣
+ConstructionManagersGovernor as a langgraph StateGraph
+(`intake → advise → govern → decide → commit/hold`, human-approval
+interrupt), modeled on cloud-itonami-isco-4311's bookkeeping actor.
+15 tests / 31 assertions green.
+
+The site HARD invariants — interval and set containment, no partial
+credit:
+
+1. **Permit window** — the proposed as-of day must fall inside the
+   site's registered permit-issued/expiry window (interval
+   containment).
+2. **Inspection completeness** — the proposed passed-inspections set
+   must be a superset of the site's registered required-inspections
+   set. A site is either permitted and inspected, or the advance
+   holds.
+
+Also HARD: unregistered/foreign site, unregistered organization,
+non-`:propose` effect. Escalations (always human sign-off):
+`:issue-occupancy-certificate` (final occupancy sign-off), low
+confidence (< 0.6).
 
 AGPL-3.0-or-later, forkable by any qualified operator. Part of the
 [cloud-itonami](https://itonami.cloud) open business fleet.
