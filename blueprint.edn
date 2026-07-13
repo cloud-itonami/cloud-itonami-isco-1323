@@ -1,0 +1,11 @@
+[{:itonami.blueprint/id "cloud-itonami-isco-1323"
+  :itonami.blueprint/name "Community Construction Managers"
+  :itonami.blueprint/isco-08 "1323"
+  :itonami.blueprint/domain :management/construction
+  :itonami.blueprint/license "AGPL-3.0-or-later"
+  :itonami.blueprint/social-impact [:operational-transparency :local-jobs :evidence-based-decisions]
+  :itonami.blueprint/governor :construction-management-governor
+  :itonami.blueprint/robotics false
+  :itonami.blueprint/required-technologies [:identity :forms :dmn :bpmn :audit-ledger]
+  :itonami.blueprint/status :public-oss
+  :db/id -1}]
