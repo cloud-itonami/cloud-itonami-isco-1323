@@ -10,7 +10,7 @@
 # are needed here. Adapted from the proven template in
 # cloud-itonami-isco-1211 (src/finmgmt/render_html.clj +
 # .github/workflows/regenerate.yml); this repo's ISCO shape differs as
-# noted in src/construction/render_html.clj's own docstring.
+# noted in src/construction/render_html.kotoba's own docstring.
 #
 # Fork note: this runs on the default GITHUB_TOKEN (contents: write).
 # If your org disables Actions, run `clojure -M:render-html` from any
