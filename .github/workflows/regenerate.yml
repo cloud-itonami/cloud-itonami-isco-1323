@@ -4,7 +4,7 @@
 # commit only when the rendered console actually changed. This repo
 # previously had NO demo page and no generator at all.
 #
-# JVM Clojure (clojure -M). deps.edn pins kotoba-lang/langgraph
+# JVM Clojure (kbb -M). deps.edn pins kotoba-lang/langgraph
 # directly via :git/sha -- tools.deps resolves it (and its own
 # transitive deps) straight from GitHub, so no sibling-checkout steps
 # are needed here. Adapted from the proven template in
@@ -13,7 +13,7 @@
 # noted in src/construction/render_html.kotoba's own docstring.
 #
 # Fork note: this runs on the default GITHUB_TOKEN (contents: write).
-# If your org disables Actions, run `clojure -M:render-html` from any
+# If your org disables Actions, run `kbb -M:render-html` from any
 # scheduler.
 name: regenerate-console
 on:
@@ -32,7 +32,7 @@ jobs:
       - uses: DeLaGuardo/setup-clojure@13.0
         with: { cli: latest }
       - name: regenerate through the real actor
-        run: clojure -M:render-html
+        run: kbb -M:render-html
       - name: verify (real output, not scaffolding)
         run: |
           grep -q 'construction.render-html' docs/samples/operator-console.html
