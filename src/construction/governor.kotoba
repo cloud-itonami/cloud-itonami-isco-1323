@@ -1,7 +1,7 @@
 (ns construction.governor
   "ConstructionManagersGovernor — the independent safety/traceability
   layer for the ISCO-08 1323 community construction managers actor
-  (itonami actor pattern, ADR-2607011000 / CLAUDE.md Actors section).
+  (itonami actor pattern, ADR-2607011000 / AGENTS.md Actors section).
   Modeled on cloud-itonami-isco-4311's bookkeeping.governor.
   Construction twist: a phase advance is only admissible when the
   as-of day falls inside the site's registered permit window (interval
